@@ -15,8 +15,10 @@ $ sudo apt install wordpress php libapache2-mod-php mysql-server php-mysql
 When mysql prompts you to enter a password, enter a password of your choice. Remember it because this is what you will use to log into mysql in the future.
 
 Follow these commands next to get the specific extensions of php that wordpress needs to run:
-``` $ sudo apt update
-$ sudo apt install php-curl php-gd php-mbstring php-xml php-xmlrpc php-soap php-intl php-zip ```
+``` 
+$ sudo apt update
+$ sudo apt install php-curl php-gd php-mbstring php-xml php-xmlrpc php-soap php-intl php-zip
+```
 
 The next adjustments are for apache:
 ``` $ sudo systemctl restart apache2 ```
@@ -24,6 +26,7 @@ The next adjustments are for apache:
 Go into the cd /etc/apache2/sites-available directory. Create a new file by doing ``` $ sudo nano wordpress.conf ```
 
 Insert the information below into the file but make sure it uses the correct path for where your wordpress install will be located.
+
 ```
 <Directory /var/www/wordpress>
     Options FollowSymLinks
@@ -37,6 +40,7 @@ Insert the information below into the file but make sure it uses the correct pat
 Exit file.
 
 write these commands to the terminal: 
+
 ```
 $ sudo a2enmod rewrite
 $ service apache2 restart
@@ -68,13 +72,16 @@ Go to your ip adress to see php info. Make sure this works.
  ```
  
  The next steps set up your mysql database: 
- ```
- $ mysql -u root -p ```
+ ``` $ mysql -u root -p ```
    Enter the mysql password that you set up above.
-   ``` CREATE DATABASE wordpress DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci; ``` (Name the database what you would like but it is important that you remember the name.)
-    ``` GRANT ALL ON wordpress.* TO 'wordpressuser'@'localhost' IDENTIFIED BY ‘password'; ``` (remember the username and password that you set.)
-   ``` FLUSH PRIVILEGES;
-    EXIT; ```
+   ``` CREATE DATABASE wordpress DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci; ``` 
+   Name the database what you would like but it is important that you remember the name.
+    ``` GRANT ALL ON wordpress.* TO 'wordpressuser'@'localhost' IDENTIFIED BY ‘password'; ``` 
+    Remember the username and password that you set.
+   ```
+   FLUSH PRIVILEGES;
+    EXIT; 
+    ```
     
 Now that you have exited my sql, go into the wordpress directory and write these commands:
 ``` $ sudo mv wp-config-sample.php wp-config.php
