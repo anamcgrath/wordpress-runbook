@@ -9,7 +9,8 @@ Your command should look something like this:
 Now install the following commands:
 ```
 $ sudo apt update
-$ sudo apt install wordpress php libapache2-mod-php mysql-server php-mysql ```
+$ sudo apt install wordpress php libapache2-mod-php mysql-server php-mysql
+```
 
 When mysql prompts you to enter a password, enter a password of your choice. Remember it because this is what you will use to log into mysql in the future.
 
