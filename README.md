@@ -54,7 +54,7 @@ write this file sudo nano info.php.
 Write to your file: 
 ```
 <?php
-				phpinfo();
+   phpinfo();
  ?>
  ```
  
@@ -78,16 +78,20 @@ Go to your ip adress to see php info. Make sure this works.
    Name the database what you would like but it is important that you remember the name.
     ``` GRANT ALL ON wordpress.* TO 'wordpressuser'@'localhost' IDENTIFIED BY ‘password'; ``` 
     Remember the username and password that you set.
+    
    ```
    FLUSH PRIVILEGES;
-    EXIT; 
-    ```
+   EXIT; 
+   ```
     
 Now that you have exited my sql, go into the wordpress directory and write these commands:
-``` $ sudo mv wp-config-sample.php wp-config.php
-$ sudo nano wp-config.php ```
+``` 
+$ sudo mv wp-config-sample.php wp-config.php
+$ sudo nano wp-config.php
+```
 
 The wp-config.php file, should look something like this:
+
 ```
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
@@ -112,6 +116,7 @@ edit these details with the database, username and password that you set.
 exit.
 
 Write this to the server:
+
 ```
 $ systemctl restart apache2
 $ systemctl restart mysql
